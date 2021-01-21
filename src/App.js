@@ -43,11 +43,22 @@ class App extends Component {
     },
   };
 
-  handleDeleteCard = (card) => {
-    console.log('handle delete card', { card });
+  handleDeleteCard = (id) => {
+    console.log('handle delete card', { id });
   }
-  handleAddNewCard = (card) => {
-    console.log('handle add new card', { card });
+
+  handleAddNewCard = () => {
+    const newRandomCard = () => {
+      const id = Math.random().toString(36).substring(2,4) + Math.random().toString(36).substring(2,4);
+      return {
+        id,
+        title: `Random Card ${id}`,
+        content: `lorem ipsum`,
+      }
+    }
+    this.setState({
+      allCards: newRandomCard
+    })
   }
 
   render() {
