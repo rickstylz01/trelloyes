@@ -1,4 +1,4 @@
-export default {
+export default  {
   lists: [
     {
       id: '1',

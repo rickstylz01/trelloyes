@@ -71,7 +71,7 @@ class App extends Component {
 
 
   render() {
-    const store = this.state;
+    const { store } = this.state;
     return (
       <main className='App'>
         <header className='App-header'>
@@ -81,6 +81,7 @@ class App extends Component {
           {store.lists.map(list => (
             <List
               key={list.id}
+              id={list.id}
               header={list.header}
               cards={list.cardIds.map(id => store.allCards[id])}
               onDeleteCard={this.handleDeleteCard}
